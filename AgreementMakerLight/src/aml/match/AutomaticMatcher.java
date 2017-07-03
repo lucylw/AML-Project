@@ -280,7 +280,10 @@ public class AutomaticMatcher
 		{
 			ObsoleteFilter or = new ObsoleteFilter();
 			or.filter();
-				
+
+			// refresh alignment after obsolete filter
+			a = aml.getAlignment();
+
 			BlockRematcher hl = new BlockRematcher();
 			Alignment b = hl.rematch(a);
 			NeighborSimilarityMatcher nb = new NeighborSimilarityMatcher(
